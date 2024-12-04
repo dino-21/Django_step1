@@ -2,8 +2,8 @@ from django.http import HttpResponse  # 삭제
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.http import HttpResponseNotAllowed
-from .forms import Question, AnswerForm
-from .forms import QuestionForm
+from .models import Question
+from .forms import QuestionForm, AnswerForm
 
 def index(request):
     question_list = Question.objects.order_by('-create_date')
